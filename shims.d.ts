@@ -109,6 +109,19 @@ declare namespace filesA {
      */
     //% weight=0 advanced=true shim=filesA::fsRead
     function fsRead(fd: number): number;
+	
+    /**
+     *
+     */
+    //% weight=0 advanced=true shim=filesA::filesA_SetByte
+	function filesA_SetByte(name: string, value: number): void;
+	
+    /**
+     *
+     */
+    //% weight=0 advanced=true shim=filesA::filesA_GetByte
+	function filesA_GetByte(name: string): number;
+
 }
 
 // Auto-generated. Do not edit. Really.

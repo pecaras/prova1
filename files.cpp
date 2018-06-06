@@ -246,4 +246,41 @@ int fsRead(int fd) {
     else return c[0];
 }
 
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+/**
+* Guarda un valor
+* @param name nom variable
+* @param valor de variable
+*/
+//% advanced=true weight=10
+//% blockId=filesA_Set block="aaafiles create directory %name"
+void filesA_Set(ManagedString name, ManagedString value) {
+    uBit.storage.put(name.toCharArray(), (uint8_t *)value.toCharArray(), value.length());
+}
+
+/**
+* Guarda un byte
+* @param name nom variable
+* @param valor (un byte)
+*/
+//% advanced=true weight=10
+//% blockId=filesA_SetByte block="aaafiles create directory %name"
+void filesA_SetByte(ManagedString name, int value) {
+    uBit.storage.put(name.toCharArray(), (uint8_t *)&value, sizeof(int));
+}
+
+/**
+* Retorna un valor
+* @param name nom variable
+* @param valor de variable
+*/
+//% advanced=true weight=10
+//% blockId=filesA_GetByte block="aaafiles create directory %name"
+int filesA_GetByte(ManagedString name) {
+    KeyValuePair* nomvalor = uBit.storage.get(name.toCharArray());
+    int resultat;
+    memcpy(&resultat, nomvalor->value, sizeof(int));
+    return resultat;
+}
+
 }
