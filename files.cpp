@@ -253,7 +253,7 @@ int fsRead(int fd) {
 * @param valor de variable
 */
 //% advanced=true weight=10
-//% blockId=filesA_Set block="aaafiles create directory %name"
+//% blockId="filesA_Set" block="aaafiles create directory %name"
 void filesA_Set(ManagedString name, ManagedString value) {
     uBit.storage.put(name.toCharArray(), (uint8_t *)value.toCharArray(), value.length());
 }
@@ -264,7 +264,7 @@ void filesA_Set(ManagedString name, ManagedString value) {
 * @param valor (un byte)
 */
 //% advanced=true weight=10
-//% blockId=filesA_SetByte block="aaafiles create directory %name"
+//% blockId="filesA_SetByte" block="aaafiles create directory %name"
 void filesA_SetByte(ManagedString name, int value) {
     uBit.storage.put(name.toCharArray(), (uint8_t *)&value, sizeof(int));
 }
@@ -275,7 +275,7 @@ void filesA_SetByte(ManagedString name, int value) {
 * @param valor de variable
 */
 //% advanced=true weight=10
-//% blockId=filesA_GetByte block="aaafiles create directory %name"
+//% blockId="filesA_GetByte" block="aaafiles create directory %name"
 int filesA_GetByte(ManagedString name) {
     KeyValuePair* nomvalor = uBit.storage.get(name.toCharArray());
     int resultat;

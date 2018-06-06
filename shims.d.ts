@@ -7,6 +7,26 @@
     //% weight=5 color=#002050 icon="\uf0a0"
 declare namespace filesA {
 
+	/**
+	* Guarda un byte
+	* @param name nom variable
+	* @param valor (un byte)
+	*/
+	//% advanced=true weight=10
+	//% blockId="filesA_SetByte" block="aaafiles create directory %name"
+	//% blockExternalInputs=2 weight=90 blockGap=8 shim=filesA::filesA_SetByte
+	function filesA_SetByte(name: string, value: number): void;
+	
+	/**
+	* Retorna un valor
+	* @param name nom variable
+	* @param valor de variable
+	*/
+	//% advanced=true weight=10
+	//% blockId="filesA_GetByte" block="aaafiles create directory %name"
+	//% blockExternalInputs=1 weight=90 blockGap=8 shim=filesA::filesA_GetByte
+	function filesA_GetByte(name: string): number;
+
     /**
      * Appends text and a new line to a file
      * @param filename file name, eg: "output.txt"
@@ -110,18 +130,6 @@ declare namespace filesA {
     //% weight=0 advanced=true shim=filesA::fsRead
     function fsRead(fd: number): number;
 	
-    /**
-     *
-     */
-    //% weight=0 advanced=true shim=filesA::filesA_SetByte
-	function filesA_SetByte(name: string, value: number): void;
-	
-    /**
-     *
-     */
-    //% weight=0 advanced=true shim=filesA::filesA_GetByte
-	function filesA_GetByte(name: string): number;
-
 }
 
 // Auto-generated. Do not edit. Really.
